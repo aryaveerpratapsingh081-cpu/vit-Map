@@ -1,0 +1,104 @@
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #050b14;
+  --foreground: #e2e8f0;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Card Style */
+.glass-panel {
+  background: rgba(10, 19, 38, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 240, 255, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-hover {
+  transition: all 0.2s ease-in-out;
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(0, 240, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(0, 240, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Tactical Pulse Radar Effect */
+@keyframes radar-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 51, 102, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(255, 51, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 51, 102, 0);
+  }
+}
+
+.radar-ping-critical {
+  animation: radar-pulse 1.8s infinite;
+}
+
+/* Leaflet Map Customization for Fullscreen Dark Theme */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background-color: #020810 !important;
+  font-family: inherit;
+  border-radius: 0;
+}
+
+.leaflet-popup-content-wrapper {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+}
+
+.leaflet-popup-tip-container {
+  display: none;
+}
+
+.leaflet-control-attribution {
+  display: none !important;
+}
+
+.leaflet-control-zoom {
+  display: none !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080f1e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e3768;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00f0ff;
+}
